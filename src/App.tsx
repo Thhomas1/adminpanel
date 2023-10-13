@@ -67,6 +67,6 @@ function App() {
 export default App
 
 
-// 19:28
+// 39:33
 // yarn para instalar
 // yarn run dev
