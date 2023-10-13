@@ -3,8 +3,11 @@ import "./footer.scss"
 
 const Footer = () => {
   return (
-    <div className="footer">Footer</div>
+    <div className="footer">
+      <span>Thomas Panel</span>
+      <span>© Dev Admin Dashboard</span>
+    </div>
   )
 }
 
-export default Footer
+export default Footer;
