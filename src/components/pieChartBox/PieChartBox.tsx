@@ -1,4 +1,4 @@
-import { Cell, Pie, PieChart, ResponsiveContainer } from "recharts";
+import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts";
 import  "./pieChartBox.scss";
 
 const data = [
@@ -16,13 +16,13 @@ const PieChartBox = () => {
     <div className="chart">
       <ResponsiveContainer width="99%" height={300}>
         <PieChart>
+          <Tooltip
+            contentStyle={{background: "white", borderRadius:"5px"}}
+          />
         <Pie
           data={data}
-          cx={120}
-          cy={200}
-          innerRadius={60}
-          outerRadius={80}
-          fill="#8884d8"
+          innerRadius={"70%"}
+          outerRadius={"90%"}
           paddingAngle={5}
           dataKey="value"
         >
@@ -35,8 +35,19 @@ const PieChartBox = () => {
       </PieChart>
       </ResponsiveContainer>
     </div>
+    <div className="options">
+      {data.map((item) => (
+        <div className="option" key={item.name}>
+          <div className="title">
+            <div className="dot" style={{backgroundColor: item.color}}/>
+            <span>{item.name}</span>
+          </div>
+          <span>{item.value}</span>
+        </div>
+      ))}
+    </div>
     </div>
   )
 }
 
-export default PieChartBox
+export default PieChartBox;
