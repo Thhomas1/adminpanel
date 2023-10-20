@@ -1,10 +1,15 @@
-import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
+import { DataGrid, GridColDef, GridToolbar, GridValueGetterParams } from "@mui/x-data-grid";
 import  "./dataTable.scss"
 
 const DataTable = () => {
 
     const columns: GridColDef[] = [
   { field: 'id', headerName: 'ID', width: 90 },
+  { field: "avatar", headerName: "Avatar", width:100,
+    renderCell: (params)=>{
+      return <img src={params.row.img ||"/noavatar.png"} alt="" />
+    }
+  },
   {
     field: 'firstName',
     headerName: 'First name',
@@ -17,6 +22,7 @@ const DataTable = () => {
     width: 150,
     editable: true,
   },
+  /*
   {
     field: 'age',
     headerName: 'Age',
@@ -24,6 +30,7 @@ const DataTable = () => {
     width: 110,
     editable: true,
   },
+  */
   {
     field: 'fullName',
     headerName: 'Full name',
@@ -52,6 +59,7 @@ const rows = [
     return (
         <div className="dataTable">
             <DataGrid
+            className="dataGrid"
             rows={rows}
             columns={columns}
             initialState={{
@@ -61,9 +69,21 @@ const rows = [
                 },
           },
         }}
+        slots={{toolbar: GridToolbar}}
+        slotProps={{
+          toolbar:{
+            showQuickFilter:true,
+            quickFilterProps: {debounceMs: 500},
+
+          },
+        }}
         pageSizeOptions={[5]}
         checkboxSelection
         disableRowSelectionOnClick
+        disableColumnFilter
+        disableDensitySelector
+        disableColumnSelector
+        
       />
         </div>
     )
