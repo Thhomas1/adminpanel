@@ -4,11 +4,29 @@ import  "./dataTable.scss"
 const DataTable = () => {
 
     const columns: GridColDef[] = [
-  { field: 'id', headerName: 'ID', width: 90 },
-  { field: "avatar", headerName: "Avatar", width:100,
-    renderCell: (params)=>{
-      return <img src={params.row.img ||"/noavatar.png"} alt="" />
-    }
+    { field: 'id', headerName: 'ID', width: 90 },
+    { field: "avatar", headerName: "Avatar", width:100,
+      renderCell: (params)=>{
+        return <img src={params.row.img ||"/noavatar.png"} alt="" />
+      }
+  },
+
+  { field: "actions", headerName: "Actions", width:100,
+      renderCell: (params)=>{
+        return <div className="action">
+          <div className="view">View</div>
+          <div className="delete">Delete</div>
+        </div>
+      }
+  },
+
+  
+  
+  {
+    field: "status",
+    headerName: "Status",
+    width: 100,
+    type: "boolean"
   },
   {
     field: 'firstName',
@@ -43,8 +61,8 @@ const DataTable = () => {
 ];
 
 const rows = [
-  { id: 1, lastName: 'Snow', firstName: 'Jon', age: 35 },
-  { id: 2, lastName: 'Lannister', firstName: 'Cersei', age: 42 },
+  { id: 1, lastName: 'Snow', firstName: 'Jon', age: 35, status:true },
+  { id: 2, lastName: 'Lannister', firstName: 'Cersei', age: 42, status:false },
   { id: 3, lastName: 'Lannister', firstName: 'Jaime', age: 45 },
   { id: 4, lastName: 'Stark', firstName: 'Arya', age: 16 },
   { id: 5, lastName: 'Targaryen', firstName: 'Daenerys', age: null },
