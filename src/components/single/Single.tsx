@@ -59,15 +59,15 @@ const Single = () => {
                 </div>
                 <div className="details">
                     <div className="item">
-                        <span className="itemTitle">Username</span>
+                        <span className="itemTitle">Username:</span>
                         <span className="itemValue">John Doe</span>
                     </div>
                     <div className="item">
-                        <span className="itemTitle">Username</span>
+                        <span className="itemTitle">Username:</span>
                         <span className="itemValue">John Doe</span>
                     </div>
                     <div className="item">
-                        <span className="itemTitle">Username</span>
+                        <span className="itemTitle">Username:</span>
                         <span className="itemValue">John Doe</span>
                     </div>
                 </div>
