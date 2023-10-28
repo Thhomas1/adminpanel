@@ -17,7 +17,7 @@ const Add = (props:Props) => {
   return (
     <div className="add">
         <div className="modal">
-            <span className="close" onClick={()=>props.setOpen(false)}>X</span>
+            <span className="close" onClick={()=>props.setOpen(false)}>x</span>
             <h1>Add new {props.slug}</h1> {/* le pasamos el props */}
             <form onSubmit={handleSubmit}>
                 {/* usamos el filter para que no sea necesario usarlos*/}
