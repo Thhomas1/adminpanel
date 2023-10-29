@@ -1,4 +1,5 @@
 import Single from "../../components/single/Single"
+import { singleUser } from "../../data"
 import "./user.scss"
 
 const User = () => {
@@ -7,7 +8,7 @@ const User = () => {
     // agarramos los datos basicamente
   return (
     <div className="user">
-        <Single />
+        <Single {...singleUser}/>
     </div>
   )
 }

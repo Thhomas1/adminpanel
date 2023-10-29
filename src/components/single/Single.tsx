@@ -69,8 +69,8 @@ const Single = (props:Props) => {
 
                   <li key={activity.text}>
                     <div>
-                        <p>Jhon Doe purchases Playstation 5 Digital Edition</p>
-                        <time>2 day ago</time>
+                        <p>{activity.text}</p>
+                        <time>{activity.time}</time>
                     </div>
                 </li>
                   ))}
