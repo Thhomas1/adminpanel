@@ -77,7 +77,8 @@ function App() {
 export default App
 
 
-// 2:32:07
+// DONE
 // yarn para instalar
 // * yarn run dev
-// Hecho por Thomas del video de Lama Dev
+// Hecho por Thomas 
+// del video de Lama Dev
